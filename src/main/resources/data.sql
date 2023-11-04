@@ -8,4 +8,5 @@ INSERT INTO Empresas (ID, NOMBRE, DIRECCION, TELEFONO, CORREO_ELECTRONICO, FECHA
 VALUES
     (1, 'Empresa A', 'Dirección A', '123-456-7890', 'empresaA@example.com', '2020-01-01', 'Pequeña', true, 1),
     (2, 'Empresa B', 'Dirección B', '987-654-3210', 'empresaB@example.com', '2019-06-15', 'Mediana', true, 1),
-    (3, 'Empresa C', 'Dirección C', '555-555-5555', 'empresaC@example.com', '2021-03-20', 'Grande', false, 3);
+    (3, 'Empresa C', 'Dirección C', '555-555-5555', 'empresaC@example.com', '2021-03-20', 'Grande', true, 3),
+    (4, 'Empresa D', 'Dirección D', '555-555-5555', 'empresaC@example.com', '2021-04-06', 'Grande', false, 3);

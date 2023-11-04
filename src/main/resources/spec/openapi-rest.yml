@@ -3,27 +3,25 @@ info:
   title: "AspyPortfolioGenerator API"
   version: "1.0.0"
 tags:
-  - name: "companies"
+  - name: "company"
   - name: "technicalId"
 paths:
-  /companies/{companiesId}:
+  /company/{companyId}:
     get:
       tags:
-        - "companies"
+        - "company"
       summary: "Obtener empresa por Id"
       description: "Obtener empresa por Id"
-      operationId: "getCompaniesToId"
+      operationId: "getCompanyToId"
       parameters:
-        - $ref: "#/components/parameters/companiesId"
+        - $ref: "#/components/parameters/companyId"
       responses:
         "200":
           description: "Éxito"
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Companies"
+                $ref: "#/components/schemas/company"
         "400":
           $ref: "#/components/responses/BadRequest"
         "401":
@@ -36,12 +34,12 @@ paths:
           $ref: "#/components/responses/ServiceUnavailable"
 components:
   parameters:
-    companiesId:
+    companyId:
       required: true
       in: path
       description: "ID de la empresa"
       example: 1
-      name: companiesId
+      name: companyId
       schema:
         $ref: '#/components/schemas/Id'
   responses:
@@ -79,7 +77,7 @@ components:
     Id:
       type: "integer"
       example: 1
-    Companies:
+    company:
       type: "object"
       properties:
         id:

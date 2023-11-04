@@ -1,4 +1,4 @@
-package com.aspy.portfoliogenerator.domain.entity.companies.Enum;
+package com.aspy.portfoliogenerator.domain.entity.company.Enum;
 
 public enum CompanieTypeEnum {
   PEQUE_A("Pequeña"),

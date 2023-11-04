@@ -1,8 +1,7 @@
 package com.aspy.portfoliogenerator.apirest.mapper;
 
-import com.aspy.openapi.model.CompaniesDTO;
-import com.aspy.portfoliogenerator.domain.entity.companies.Companies;
-import java.util.List;
+import com.aspy.openapi.model.CompanyDTO;
+import com.aspy.portfoliogenerator.domain.entity.company.Company;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -24,7 +23,7 @@ public interface CompaniesMapper {
     @Mapping(source = "state", target = "state"),
     @Mapping(source = "technicalId", target = "technicalId"),
   })
-  List<CompaniesDTO> companiesToCompaniesDTO(List<Companies> listCompanies);
+  CompanyDTO companiesToCompaniesDTO(Company listCompany);
 
-  Companies companiesDTOToCompanies(CompaniesDTO companiesDTO);
+  Company companiesDTOToCompanies(CompanyDTO companiesDTO);
 }

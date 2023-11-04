@@ -1,6 +1,6 @@
 package com.aspy.portfoliogenerator.infraestructure.jpa;
 
-import com.aspy.portfoliogenerator.domain.entity.companies.Enum.CompanieTypeEnum;
+import com.aspy.portfoliogenerator.domain.entity.company.Enum.CompanieTypeEnum;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -15,7 +15,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Table(name = "EMPRESAS")
-public class CompaniesJpa {
+public class CompanyJpa {
 
   @Id
   @Column(name = "ID")

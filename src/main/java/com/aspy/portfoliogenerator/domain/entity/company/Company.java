@@ -1,5 +1,6 @@
-package com.aspy.portfoliogenerator.domain.entity.companies;
+package com.aspy.portfoliogenerator.domain.entity.company;
 
+import com.aspy.portfoliogenerator.domain.entity.company.Enum.CompanieTypeEnum;
 import java.time.LocalDateTime;
 import lombok.*;
 
@@ -8,7 +9,7 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class CompaniesRequest {
+public class Company {
 
   private Integer id;
   private String name;
@@ -16,7 +17,7 @@ public class CompaniesRequest {
   private String phoneNumber;
   private String email;
   private LocalDateTime createDate;
-  private String companieType;
-  private boolean state;
+  private CompanieTypeEnum companieType;
+  private String state;
   private Integer technicalId;
 }

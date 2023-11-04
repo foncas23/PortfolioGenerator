@@ -1,17 +1,16 @@
-package com.aspy.portfoliogenerator.infraestructure.mapper.companies;
+package com.aspy.portfoliogenerator.infraestructure.mapper.company;
 
-import com.aspy.portfoliogenerator.domain.entity.companies.Companies;
-import com.aspy.portfoliogenerator.infraestructure.jpa.CompaniesJpa;
-import java.util.List;
+import com.aspy.portfoliogenerator.domain.entity.company.Company;
+import com.aspy.portfoliogenerator.infraestructure.jpa.CompanyJpa;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
-public interface CompaniesJpaMapper {
+public interface CompanyJpaMapper {
 
-  CompaniesJpaMapper INSTANCE = Mappers.getMapper(CompaniesJpaMapper.class);
+  CompanyJpaMapper INSTANCE = Mappers.getMapper(CompanyJpaMapper.class);
 
   @Mappings({
     @Mapping(source = "id", target = "id"),
@@ -24,5 +23,5 @@ public interface CompaniesJpaMapper {
     @Mapping(source = "state", target = "state"),
     @Mapping(source = "technicalId", target = "technicalId"),
   })
-  List<Companies> toCompanies(List<CompaniesJpa> companiesJpa);
+  Company toCompanies(CompanyJpa companyJpa);
 }
