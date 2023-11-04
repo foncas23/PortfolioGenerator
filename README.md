@@ -6,4 +6,4 @@
 ### Endpoints 
 
 #### Get companie asigned to a technical ID
-- **Endpoint**: `/companies/{companiesId} :arrow_right: Ejemplo para Postman `http://localhost:8080/companies/1
+- **Endpoint**: `/companies/{companiesId}` :arrow_right: ` Ejemplo para Postman `http://localhost:8080/companies/1
