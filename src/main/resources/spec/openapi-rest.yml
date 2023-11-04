@@ -1,0 +1,139 @@
+openapi: 3.0.3
+info:
+  title: "AspyPortfolioGenerator API"
+  version: "1.0.0"
+tags:
+  - name: "companies"
+  - name: "technicalId"
+paths:
+  /companies/{companiesId}:
+    get:
+      tags:
+        - "companies"
+      summary: "Obtener empresa por Id"
+      description: "Obtener empresa por Id"
+      operationId: "getCompaniesToId"
+      parameters:
+        - $ref: "#/components/parameters/companiesId"
+      responses:
+        "200":
+          description: "Éxito"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Companies"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "500":
+          $ref: "#/components/responses/ServerError"
+        "503":
+          $ref: "#/components/responses/ServiceUnavailable"
+components:
+  parameters:
+    companiesId:
+      required: true
+      in: path
+      description: "ID de la empresa"
+      example: 1
+      name: companiesId
+      schema:
+        $ref: '#/components/schemas/Id'
+  responses:
+    BadRequest:
+      description: "Solicitud con sintaxis incorrecta o no se puede procesar"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Unauthorized:
+      description: "No autorizado"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Forbidden:
+      description: "Prohibido"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    ServerError:
+      description: "Error interno del servidor"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    ServiceUnavailable:
+      description: "Servicio no disponible"
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Id:
+      type: "integer"
+      example: 1
+    Companies:
+      type: "object"
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "Nombre de la Compañía"
+        address:
+          type: string
+          example: "Dirección de la Compañía"
+        phoneNumber:
+          type: string
+          example: "555-555-555"
+        email:
+          type: string
+          example: "companie@companie.com"
+        createDate:
+          type: string
+          format: date-time
+          example: "2023-11-04T10:00:00Z"
+        companieType:
+          type: string
+          enum:
+            - "Pequeña"
+            - "Mediana"
+            - "Grande"
+          example: "Medium"
+        state:
+          type: boolean
+          example: true
+        technicalId:
+          type: integer
+          example: 1
+    Error:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 255
+        detail:
+          type: string
+          maxLength: 255
+        status:
+          type: integer
+          format: int32
+          minimum: 100
+          maximum: 599
+        message:
+          type: string
+          maxLength: 255
+        errors:
+          type: array
+          maxItems: 100
+          items:
+            type: string
+            maxLength: 255
