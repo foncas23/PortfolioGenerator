@@ -1,7 +1,7 @@
 package com.aspy.portfoliogenerator.infraestructure.service.company;
 
 import com.aspy.portfoliogenerator.domain.entity.company.Company;
-import com.aspy.portfoliogenerator.domain.services.company.CompanyService;
+import com.aspy.portfoliogenerator.domain.iServices.company.CompanyService;
 import com.aspy.portfoliogenerator.infraestructure.jpa.CompanyJpa;
 import com.aspy.portfoliogenerator.infraestructure.mapper.company.CompanyJpaMapper;
 import com.aspy.portfoliogenerator.infraestructure.repository.company.CompanieJpaRepository;

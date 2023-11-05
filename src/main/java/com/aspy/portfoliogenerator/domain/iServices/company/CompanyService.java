@@ -1,4 +1,4 @@
-package com.aspy.portfoliogenerator.domain.services.company;
+package com.aspy.portfoliogenerator.domain.iServices.company;
 
 import com.aspy.portfoliogenerator.domain.entity.company.Company;
 

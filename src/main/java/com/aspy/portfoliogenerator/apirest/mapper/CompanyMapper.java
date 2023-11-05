@@ -8,9 +8,9 @@ import org.mapstruct.Mappings;
 import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
-public interface CompaniesMapper {
+public interface CompanyMapper {
 
-  CompaniesMapper INSTANCE = Mappers.getMapper(CompaniesMapper.class);
+  CompanyMapper INSTANCE = Mappers.getMapper(CompanyMapper.class);
 
   @Mappings({
     @Mapping(source = "id", target = "id"),
